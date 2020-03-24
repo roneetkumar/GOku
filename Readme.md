@@ -13,8 +13,8 @@ wants to identify routers which would result in a disconnected
 network if they went down and add replicas of these routers
 to the network.
 
-Write an algorithm to identify all such routers that need to
-be connected to the network all the time.
+**Write an algorithm to identify all such routers that need to
+be connected to the network all the time.**
 
 __Input:__
 the input to the function/method consists of three
@@ -37,4 +37,50 @@ Return a list of integers representing the routers which
 need to be connected to the network all the time.
 ```
 [3 , 4 , 6]
+```
+
+----------------------------------------------------------------
+
+
+## __Stores__
+
+A company plans to open stores downtown in the
+city of Techlandia. Downtown Techlandia consists of city
+blocks, represented as a grid of M*N
+blocks. Each block represents either building denoted by
+1 or open land area denoted by 0.
+Adjacent blocks with value 1 are considered clusters of
+buildings. Diagonal blocks with value 1 are not considered
+part of the same cluster. this company plans to have a store
+in each cluster of buildings.
+
+**Write an algorithm to find the number of stores that
+this company can open in downtown Techlandia.**
+
+__Input:__
+the input to the function/method consists of three arguments:
+rows, an integer representing the number of rows in the grid.
+columns, an integer representing the number of columns in
+the grid.
+grid, a two-dimensional integer array representing downtown
+Techlandia.
+
+```
+rows = 5
+columns = 4
+grid = [
+   [ 1, 1, 0, 0 ]
+   [ 0, 0, 1, 0 ]
+   [ 0, 0, 0, 0 ]
+   [ 1, 0, 1, 1 ]
+   [ 1, 1, 1, 1 ]
+]
+```
+
+__Output:__
+Returns an integer representing the number of stores that
+this company could build in downtown Techlandia.
+
+```
+output : 3
 ```
