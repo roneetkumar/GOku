@@ -28,8 +28,6 @@ func main() {
 		}
 	}
 
-	// fmt.Println(impRouters)
-
 	// display output
 	for i, router := range impRouters {
 		if router {

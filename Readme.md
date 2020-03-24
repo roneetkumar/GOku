@@ -1,4 +1,4 @@
-## __Routers__:
+## __Routers__
 
 a company wants to increase the reliability of its network
 and is piloting hardware enhancements in one of the data
