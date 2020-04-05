@@ -8,10 +8,10 @@ import (
 func main() {
 
 	grid := [][]int{
-		{1, 1, 1, 1},
-		{1, 0, 1, 0},
+		{1, 1, 0, 0},
 		{0, 1, 0, 0},
-		{1, 0, 0, 1},
+		{0, 0, 1, 0},
+		{0, 0, 1, 1},
 	}
 
 	gridMap := getLocationMap(grid)
@@ -37,32 +37,29 @@ func checkInCluster(plot map[string]int, clusters *[][]map[string]int) {
 
 	if len(*clusters) == 0 {
 		*clusters = append(*clusters, []map[string]int{plot})
+		return
 	}
 
+	found := false
+
 	for i := 0; i < len(*clusters); i++ {
-		var found bool
 		for j := 0; j < len((*clusters)[i]); j++ {
-			found = false
 
 			temp := (*clusters)[i][j]
 
 			if plot["x"] == temp["x"] || plot["y"] == temp["y"] {
 
 				if math.Abs(float64(plot["x"])-float64(temp["x"])) == 1 || math.Abs(float64(plot["y"])-float64(temp["y"])) == 1 {
-
 					(*clusters)[i] = append((*clusters)[i], plot)
-
+					found = true
+					break
 				}
-			} else {
-				found = true
-				continue
 			}
 		}
 
-		if found {
-			*clusters = append(*clusters, []map[string]int{plot})
-			break
-		}
+	}
+	if !found {
+		*clusters = append(*clusters, []map[string]int{plot})
 	}
 }
 
